@@ -1,66 +1,66 @@
-# Source and further info at: https://docs.acme.mega.cariad.cloud/docs/start/onboarding/
-
-name: <PRODUCT_NAME (restrictions: max 8 characters - only lowercase letters and digits, no dashes, underscores etc.)>
-certificateIssuers:
-- type: digicert
-  description: test config
-  allowedDomains:
-    - cariad.digital
-    - apps.emea.vwapps.io
-    - apps.na.vwapps.io
-    - apps.ap.vwapps.io
-    - apps.vwautocloud.cn
-    - vwgroup.io
+name: sretest
 stages:
-  - name: <PRODUCT_STAGE_NAME (e.g. prod,dev,qa,..) (restrictions: max 8 characters - only lowercase letters and digits, no dashes, underscores etc.)>
+  - name: dev
     publicKey: |
-      # Hints:
-      #   Be sure to adapt validity period in the openssl command to your needs
-      #   Be sure to create individual public keys with significant CN for every stage.
-      #   Create the key pair with the following command, and provide the public key files content (certificate) here. Pay attention to the indentation.
-      #     openssl req -x509 -newkey rsa:4096 -nodes -days 365 -keyout sample_privatekey_dev.pem -out sample_pubkey_dev.pem -subj '/CN=mega-sample'
       -----BEGIN CERTIFICATE-----
-      MII...
-      
-      # create the pair with the following command:
-      # openssl req -x509 -newkey rsa:4096 -nodes -days 365 -keyout sample_privatekey_dev.pem -out sample_pubkey_dev.pem -subj '/CN=mega-sample'
-      
+      MIIFFzCCAv+gAwIBAgIUSZuIMFgW1BWEd9qirUjW+R/D/wswDQYJKoZIhvcNAQEL
+      BQAwGzEZMBcGA1UEAwwQc3JhLW1lZ2F0cm9uLWRldjAeFw0yNDAyMjgwODEyMzNa
+      Fw0yNTAyMjcwODEyMzNaMBsxGTAXBgNVBAMMEHNyYS1tZWdhdHJvbi1kZXYwggIi
+      MA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDHe4QsZyaUkCe8umR9nG4yzLF5
+      wPfknj+P+e9Uak6WLT2gi68wOIb7uwrzDielg9MiWDJpPSLirAJGTtR0mOKFc4Ea
+      NE8YiPEEBvEdWpLM67SWa/z0ISBSpPfTkF01cR9E55S/J1x6PASX0JyeXS/rG5TS
+      aogMtYFS6FZzukOHPD/d7PQat6GMBsn2ZK4+5pO1hvB4eHAXrtrTKxYlmAy7kdED
+      Vd6O3qCubWyOsBB+sipStx90xPtLC2kTOZRqsxSWkr7S//Pu5Kt5UvfD58Zkih23
+      IRhM+MlC3dqu6aDKxK+Y3J9aq5Fcp9JnZhLy/Ged2fQOss6FPlD3JP4tDreym7b+
+      +9JEWr+l48SNO4RE5pCkshTdMhGGBJAsGAxVxRhNQmP51yxlNRpmdLH9fSaE6whQ
+      0sVaoFLQLpYTlVp8OGtgXx9MXGV5KrAMtXy/+JX+R8JamaNsIRw6uydSRwpEGakh
+      +7ytem9Se4LsBjvwvjVfb+c3vpvy+VJ/OUl6IRL9EZih38OfcXJOx/bD2K6ArKw4
+      p4S5haRfGSYWb+DYkCzwCIYU3ROSFjmA14NbXkAyMBkvjsThfcFata3J+87IEx9r
+      Kbvan4CfJZxdAGUhw1JB5unNw0gLKbhQIos9W3/FuGyISWVksPr7h+6JqN1V9RSA
+      fdxBLjJlpvZOPgZ//QIDAQABo1MwUTAdBgNVHQ4EFgQUsbneNPP4rN+M2CRwljwf
+      4tLCC5owHwYDVR0jBBgwFoAUsbneNPP4rN+M2CRwljwf4tLCC5owDwYDVR0TAQH/
+      BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAgEAI3EgroK3+RfRXm+3H4dFMaBOQn7n
+      ZTOsAMZ3dkh6JPcrFWjBGTwf+bhu64eAVE39tfT77ZFePk8M7eMapjYJ6LYlc5Wi
+      jfJpJKnpQkdiS7iYJ90ubVUBnMmbzndDXqkTuWk0rHrLnU4HNxqB1l2kXnjFGJb2
+      vgT1/XQ8nyTZY6Pd3xiTxrj5Y6WRKLgClxPfdU+0XAn3/vYsBxoRDbUHpA97PNZo
+      9jEKBQ6pOO19G7bO37sBtSCZFFfQTq0cl8WvhNnFbqbtzj/wAOJk8eezQjcjYowh
+      uq8KOQOWJbAfsT202H8sIhlXMwHbf9isRFs7kfUITJcaV4FESuF3eCqZG5ABeIWw
+      8zkexDPstmQAjIPkkYjt/3Z/I8BpzORJKjRlW37vlckOIu+usBy4NhtnHIkwFB1x
+      zPEgOvZ1RTD2o7ybaODva6u2GHyRpT8cref6n2RJ75IBrUAE/UPdz1fBU9Y+YXvg
+      d9wBZg8hVO9TkdKbfmxYNfpEGDvohogq9cLrvSYqRSIOt/U4cumtdmpJK1EE1NIQ
+      Nqh+r7myCzzme2n47Bz0KIpkT503OlfqxOSIAixmCVvG8CaWxwL5qf4wGGLQTU7q
+      RFi1aT58knULlNT+TNDqXtqe/0rWStdb7cusV4dp4TiDs6RzO5+6mHfPwBTxTcEG
+      C/hopNp3bgEJ/Ok=
       -----END CERTIFICATE-----
     platform:
-      hub: <megatron hub to which the cluster is connected to, e.g. westeurope>
-      cluster: <megatron cluster name where the product stage has to be created in> 
-      roles:
-        # Two internal managers are required
-        - role: manager
-          users:
-            - <email-adress-of-user@who-is-onboarded-via-cloud-portal>
-            - <email-adress-of-user@who-is-onboarded-via-cloud-portal>
-          technicalUsers:
-            - <e.g. githubactionsuser>
-        - role: developer
-          users:
-            - <dev1-email-adress>
-            - <dev2-email-adress>
-          technicalUsers: []
-        - role: user
-          users: []
-          technicalUsers: []
+     hub: eastus2
+     cluster: miami
+     roles:
+       - role: manager
+         users:
+           - jason.tucker@cariad.us
+           - sravanthi.paripally@cariad.us
+         technicalUsers:
+           - megasretest-api-spn
+       - role: developer
+         users:
+            - yasvanth.udayakumar@cariad.us
+            - vijay.koneru@cariad.us
+            - tom.tran@cariad.us
+            - nick.carlson@cariad.us          
+         technicalUsers: []
+       - role: user
+         users: []
+         technicalUsers: []
     containerRepos:
-      - name: exampleimage1
-      - name: exampleimage2
+      - name: megasre-test-api
     keyVault:
       roles:
         - role: writer
           users:
-            - <dev1-email-adress>
+            - sravanthi.paripally@cariad.us
           technicalUsers:
-            - <e.g. githubactionsuser>
-        - role: reader
-          users:
-            - <dev2-email-adress>
-          technicalUsers: []
-    # optional sectio: argoCD. Uncomment it, if you want to use Argo CD and provide urls to repositories, 
-    # where your Argo CD deployments reside. After stage creation, enter the repo credentials within the Argo CD UI and create the application.
-    #argoCD:
-    #  repositories:
-    #    - repositoryURL: <URL to your repo, e.g. 'https://github.com/vwdfive/megatron-sample-spring-argo'>
+            - megasretest-api-spn
+    argoCD:
+      repositories:
+        - repositoryURL: "https://vwac-ado-mgmt@dev.azure.com/vwac-ado-mgmt/VW.AC-Common/_git/megasre"
