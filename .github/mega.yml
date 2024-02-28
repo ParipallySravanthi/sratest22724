@@ -1,0 +1,66 @@
+# Source and further info at: https://docs.acme.mega.cariad.cloud/docs/start/onboarding/
+
+name: <PRODUCT_NAME (restrictions: max 8 characters - only lowercase letters and digits, no dashes, underscores etc.)>
+certificateIssuers:
+- type: digicert
+  description: test config
+  allowedDomains:
+    - cariad.digital
+    - apps.emea.vwapps.io
+    - apps.na.vwapps.io
+    - apps.ap.vwapps.io
+    - apps.vwautocloud.cn
+    - vwgroup.io
+stages:
+  - name: <PRODUCT_STAGE_NAME (e.g. prod,dev,qa,..) (restrictions: max 8 characters - only lowercase letters and digits, no dashes, underscores etc.)>
+    publicKey: |
+      # Hints:
+      #   Be sure to adapt validity period in the openssl command to your needs
+      #   Be sure to create individual public keys with significant CN for every stage.
+      #   Create the key pair with the following command, and provide the public key files content (certificate) here. Pay attention to the indentation.
+      #     openssl req -x509 -newkey rsa:4096 -nodes -days 365 -keyout sample_privatekey_dev.pem -out sample_pubkey_dev.pem -subj '/CN=mega-sample'
+      -----BEGIN CERTIFICATE-----
+      MII...
+      
+      # create the pair with the following command:
+      # openssl req -x509 -newkey rsa:4096 -nodes -days 365 -keyout sample_privatekey_dev.pem -out sample_pubkey_dev.pem -subj '/CN=mega-sample'
+      
+      -----END CERTIFICATE-----
+    platform:
+      hub: <megatron hub to which the cluster is connected to, e.g. westeurope>
+      cluster: <megatron cluster name where the product stage has to be created in> 
+      roles:
+        # Two internal managers are required
+        - role: manager
+          users:
+            - <email-adress-of-user@who-is-onboarded-via-cloud-portal>
+            - <email-adress-of-user@who-is-onboarded-via-cloud-portal>
+          technicalUsers:
+            - <e.g. githubactionsuser>
+        - role: developer
+          users:
+            - <dev1-email-adress>
+            - <dev2-email-adress>
+          technicalUsers: []
+        - role: user
+          users: []
+          technicalUsers: []
+    containerRepos:
+      - name: exampleimage1
+      - name: exampleimage2
+    keyVault:
+      roles:
+        - role: writer
+          users:
+            - <dev1-email-adress>
+          technicalUsers:
+            - <e.g. githubactionsuser>
+        - role: reader
+          users:
+            - <dev2-email-adress>
+          technicalUsers: []
+    # optional sectio: argoCD. Uncomment it, if you want to use Argo CD and provide urls to repositories, 
+    # where your Argo CD deployments reside. After stage creation, enter the repo credentials within the Argo CD UI and create the application.
+    #argoCD:
+    #  repositories:
+    #    - repositoryURL: <URL to your repo, e.g. 'https://github.com/vwdfive/megatron-sample-spring-argo'>
